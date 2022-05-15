@@ -91,6 +91,15 @@ app.listen(port, () => {
 
 ```
 
+## server GET
+```
+app.get('/usuario', async (req, res) => {
+    const alluser =  await prisma.usario.findMany({});
+    res.json(alluser);
+  });
+
+```
+
 ## Informacion de la base de datos. 
 - Nombre
 - Apellido
