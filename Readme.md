@@ -119,6 +119,10 @@ app.get('/usuario', async (req, res) => {
 
 ```
 
+## instalacion de cors
+
+``npm install cors --save``
+
 ## Informacion de la base de datos. 
 | Campo      	| Tipo de Dato 	|
 |------------	|:------------:	|
