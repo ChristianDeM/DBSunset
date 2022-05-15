@@ -37,7 +37,7 @@ model Usario {
 
 
 ## creando  Seed.js
-``
+```
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -66,7 +66,8 @@ const prisma = new PrismaClient();
     await prisma.$disconnect();
   }
 })();
-``
+
+```
 
 ## Informacion de la base de datos. 
 - Nombre
