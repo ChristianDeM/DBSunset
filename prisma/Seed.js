@@ -10,10 +10,11 @@ const prisma = new PrismaClient();
         Nombre: 'usuario',
         Apellido: 'usuario',
         Correo: 'usuario@sunset.com',
-        Telefono: '22222222',
-        Kilos: '10',
+        Telefono: 22222222,
+        Kilos: 10,
         Estado: 'Chachalacas',
-        Nombre: 'Veracruz',
+        Playa: 'Veracruz',
+        
       },
     });
 
