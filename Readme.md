@@ -123,6 +123,16 @@ app.get('/usuario', async (req, res) => {
 
 ``npm install cors --save``
 
+
+## codigo de cors
+```
+ const cors = require("cors");
+const corsOption={
+    origin:"http://localhost:8081"
+};
+app.use(cors(corsOption));
+
+ ```
 ## Informacion de la base de datos. 
 | Campo      	| Tipo de Dato 	|
 |------------	|:------------:	|
