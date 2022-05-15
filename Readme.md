@@ -32,6 +32,10 @@ model Usario {
 
 ```
 
+## creando migrations de prsima 
+``npx prisma migrate dev --name init ``
+
+
 ## Informacion de la base de datos. 
 - Nombre
 - Apellido
