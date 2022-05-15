@@ -100,6 +100,25 @@ app.get('/usuario', async (req, res) => {
 
 ```
 
+## server POST
+```
+ app.post('/usuario', async (req, res) => {
+    const usario = {
+        Nombre: req.body.Nombre,
+        Apellido: req.body.Apellido,
+        Correo: req.body.Correo,
+        Telefono: req.body.Telefono,
+        Kilos: req.body.Kilos,
+        Playa: req.body.Playa,
+        Estado: req.body.Estado,
+     };
+    const message = 'Usuario creado.';
+    await prisma.usario.create({data: usario});
+    return res.json({message});
+  });
+  
+```
+
 ## Informacion de la base de datos. 
 - Nombre
 - Apellido
