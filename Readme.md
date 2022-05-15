@@ -116,17 +116,18 @@ app.get('/usuario', async (req, res) => {
     await prisma.usario.create({data: usario});
     return res.json({message});
   });
-  
+
 ```
 
 ## Informacion de la base de datos. 
-- Nombre
-- Apellido
-- Correo
-- Correo
-- Telefono
-- Kilogramos recolectados
-- Playa
-- Estado
+| Campo      	| Tipo de Dato 	|
+|------------	|:------------:	|
+| Nombre     	| integer      	|
+| Apellido   	| varchar      	|
+| Correo     	| varchar      	|
+| Telefono   	| int          	|
+| Kilogramos 	| int          	|
+| Playa      	| varchar      	|
+| Estado     	| varchar      	|
 
 
