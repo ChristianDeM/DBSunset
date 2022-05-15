@@ -4,7 +4,10 @@
 ## iniciando packet.json
 `` npm init  ``
 ## instalando expres 
-npm install express --save-dev
+``npm install express --save-dev``
+
+## instalando prisma
+``npm install prisma --save-dev``
 
 ## Informacion de la base de datos. 
 - Nombre
@@ -15,3 +18,5 @@ npm install express --save-dev
 - Kilogramos recolectados
 - Playa
 - Estado
+
+
