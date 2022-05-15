@@ -70,6 +70,7 @@ const prisma = new PrismaClient();
 
 ```
 ## Creando server.js
+
 ```
 const express = require('express');
 const app = express();
@@ -87,6 +88,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
+
 ```
 
 ## Informacion de la base de datos. 
