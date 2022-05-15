@@ -12,6 +12,9 @@
 ## iniciando prisma 
 ``npx prisma init``
 
+## creando la base de datos con postgres
+``create database Sunset;``
+
 ## Informacion de la base de datos. 
 - Nombre
 - Apellido
