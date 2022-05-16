@@ -1,6 +1,14 @@
+## pasos para este proyecto 💻
+
+<p> Para este proyecto estamos contemplando que ya tienes instalado NPM.👨‍💻
+
+- npm ``8.3.1``
+- node ``16.14.0``
+- Prisma:``3.14.0``
+- eslint:``8.15.0``
+- Postgres ``14.3 ``
 
 
-## pasos para este proyectos
 ## iniciando packet.json
 `` npm init  ``
 ## instalando expres 
@@ -15,7 +23,12 @@
 ## creando la base de datos con postgres
 ``create database Sunset;``
 
+
+
 ## creando model en prisma 
+
+<p> Este codigo es el que ara la migracion con psrisma.
+
 ```
 model Usario {
   id Int @id @default(autoincrement())
@@ -32,11 +45,31 @@ model Usario {
 
 ```
 
+
+## Informacion de la base de datos. 💻
+| Campo      	| Tipo de Dato 	|
+|------------	|:------------:	|
+| Nombre     	| integer      	|
+| Apellido   	| varchar      	|
+| Correo     	| varchar      	|
+| Telefono   	| int          	|
+| Kilogramos 	| int          	|
+| Playa      	| varchar      	|
+| Estado     	| varchar      	|
+
+
+
+
+
 ## creando migrations de prsima 
+<p> iniciamos  la migracion con el siguiente codigo.
+
 ``npx prisma migrate dev --name init ``
 
 
-## creando  Seed.js
+## creando 1 Seed.js
+<p> creamos   seed.js para subir el primer usuario
+
 ```
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
@@ -71,6 +104,9 @@ const prisma = new PrismaClient();
 ```
 ## Creando server.js
 
+<p> Creamos el server para Exxpress  Posteriormente  aremos los end points 
+
+
 ```
 const express = require('express');
 const app = express();
@@ -90,6 +126,18 @@ app.listen(port, () => {
 });
 
 ```
+
+## End points  usados 🔘
+
+| End points                       	|        Tipo de DatoRequest       	|        	| Response                                          	|
+|----------------------------------	|:--------------------------------:	|--------	|---------------------------------------------------	|
+| http://localhost:3000/usuario    	| http://localhost:3000/usuario    	| GET    	| Regresa a todos los usuarios                      	|
+| http://localhost:3000/usuario/id 	| http://localhost:3000/usuario/id 	| GET    	| Regresa  el usuario con su id de la base de datos 	|
+| http://localhost:3000/usuario    	| http://localhost:3000/usuario    	| POST   	| Crea un registro del usuario                      	|
+| http://localhost:3000/usuario/id 	| http://localhost:3000/usuario/id 	| UPDATE 	| Modifica al usuario  reconocido por su id         	|
+| http://localhost:3000/usuario/id 	| http://localhost:3000/usuario/   	| DELATE 	| Elimina al usuario por su respectiva id           	|
+
+
 
 ## server GET
 ```
@@ -119,12 +167,42 @@ app.get('/usuario', async (req, res) => {
 
 ```
 
-## instalacion de cors
+## server PUT en nombre
+
+```
+app.put('/usuario/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+  
+    await prisma.usario.update({
+      where: {
+        id: id
+      },
+      data: {
+        Nombre: req.body.Nombre
+      }
+    })
+
+```
+## Server Delate
+
+```
+ app.delete('/usuario/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    await prisma.usario.delete({where: {id: id}});
+    return res.json({message: "Eliminado correctamente"});
+  });
+
+```
+
+## instalacion de cors💻
 
 ``npm install cors --save``
 
 
-## codigo de cors
+## codigo de cors 
+
+<p> Con corspodremos integrar el back end con el frontEnd
+
 ```
  const cors = require("cors");
 const corsOption={
@@ -133,15 +211,4 @@ const corsOption={
 app.use(cors(corsOption));
 
  ```
-## Informacion de la base de datos. 
-| Campo      	| Tipo de Dato 	|
-|------------	|:------------:	|
-| Nombre     	| integer      	|
-| Apellido   	| varchar      	|
-| Correo     	| varchar      	|
-| Telefono   	| int          	|
-| Kilogramos 	| int          	|
-| Playa      	| varchar      	|
-| Estado     	| varchar      	|
-
 
